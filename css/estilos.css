@@ -1,0 +1,16 @@
+.encabezado{
+	background-image: url('../imagenes/lapiz.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	font-weight: bold; 
+}
+
+.encabezado h1{
+	font-weight: bold;
+
+}
+
+footer{
+	background-color: #FFCF2D;
+	height: 80px;
+}
