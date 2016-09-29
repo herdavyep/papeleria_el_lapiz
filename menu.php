@@ -19,9 +19,9 @@
 						{
 							
 							?>
-							<li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> index</a></li>
-							<li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a></li>
-							<li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Productos</a></li>
+							<li class="active"><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> index</a></li>
+							<li><a href="listar_usuarios.php"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a></li>
+							<li><a href="listar_productos.php"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Productos</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> <?php echo "usuario ". $_SESSION['nombre']." ". $_SESSION['apellido']; ?> <b class="caret"></b></a>
 								<ul class="dropdown-menu">

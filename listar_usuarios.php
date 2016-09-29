@@ -69,9 +69,7 @@
 ?>
 
 	<div class="container">
-
 		<h2 class="text-center" >Listar usuarios</h2>
-
 		<a href="crear_usuario.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>Añadir Nuevo usuario</a>
 		
 		<table class="table table-striped table-bordered ">
