@@ -17,7 +17,8 @@
       require_once('menu.php');
    ?>
   <!--no acupa 100% de la pantalla y centra el texto-->
-  <div class="container text-center encabezado">
-  <h1>Papeleria El Lápiz</h1>
+  <div class="container text-center ">
+  <h1>CoffeeApp</h1>
+  <img width="50px" className="Imagen" src="./imagenes/grano-cafe.png" alt="cafe"/>
   </div>
   <!--MENU-->

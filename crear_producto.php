@@ -7,14 +7,13 @@
 	 && isset($_POST['fecha_vencimiento']) 
 	 && isset($_POST['valor']) 
 	 && isset($_FILES['adjunto_producto'])
-	 && isset($_POST['usuario_id'])) 
+	 ) 
 	{
 		$nombre=$_POST['nombre'];
 		$referencia=$_POST['referencia'];
 		$fecha_vencimiento=$_POST['fecha_vencimiento'];
 		$valor=$_POST['valor'];
 		$adjunto_producto=$_FILES['adjunto_producto']['name'];
-		$usuario_id=$_POST['usuario_id'];
 		$carpeta = "adjunto_producto/";
 		$direccion = $carpeta.basename($adjunto_producto);
 
@@ -22,7 +21,7 @@
 		{
 			
 			require_once('conexion.php');
-			$insertar=mysqli_query($conexion,  "INSERT INTO productos(nombre, referencia, fecha_vencimiento, valor, adjunto_producto, usuario_id) VALUES ('$nombre', '$referencia', '$fecha_vencimiento', '$valor', '$adjunto_producto', '$usuario_id')");
+			$insertar=mysqli_query($conexion,  "INSERT INTO productos(nombre, referencia, fecha_vencimiento, valor, adjunto_producto) VALUES ('$nombre', '$referencia', '$fecha_vencimiento', '$valor', '$adjunto_producto')");
 			//instruccion para saber si se afecto alguna columna
 			$consulta=mysqli_affected_rows($conexion);
 			if($consulta == 1)
@@ -78,7 +77,7 @@
 			<div class="form-group">
 				
 				<label for="nombre">Fecha vencimiento</label>
-				<input type="date" name="fecha_vencimiento" class="form-control" placeholder="Ingrese fecha vencimiento" required="">
+				<input type="text" name="fecha_vencimiento" class="form-control" placeholder="Ingrese fecha vencimiento" required="">
 			</div>	
 
 			<div class="form-group">

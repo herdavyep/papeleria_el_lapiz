@@ -58,10 +58,10 @@
 
 <div class="container">
 
-	<h2 class="text-center">Crear Nuevo Usuario</h2>
+	<h2 class="text-center">Registrar Nuevo Cliente</h2>
 	<div class="row">
 	<div class="col-md-2"></div>
-		<form action="crear_usuario.php" class="col-md-8" method="post">
+		<form action="registro.php" class="col-md-8" method="post">
 
 			<div class="form-group">
 				
@@ -82,11 +82,9 @@
 			</div>	
 
 			<div class="form-group">
-			<label for="tipo-usuario">Seleccione un Tipo de Usuario</label>
-				<select name="tipo_usuario" class="form-control">
-					<option value="administrador">Administrador</option>					 
+			<label for="tipo-usuario">Usuario Tipo Cliente</label>
+				<select name="tipo_usuario" class="form-control">					 
 					<option value="cliente">Cliente</option>
-
 				</select>
 			</div>	
 
@@ -104,7 +102,7 @@
 
 			<div class="text-center">
 				<button type="submit" class="btn btn-primary">Crear Usuario</button>
-				<a href="listar_usuarios.php"  class="btn btn-success">Volver Atras</a>
+				<a href="index.php"  class="btn btn-success">Volver al Index</a>
 
 			</div>		
 

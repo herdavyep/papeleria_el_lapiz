@@ -1,12 +1,11 @@
-.encabezado{
-	background-image: url('../imagenes/lapiz.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	font-weight: bold; 
+.Imagen {
+	display: inline;
+	padding-bottom: 15px;
 }
 
 .encabezado h1{
 	font-weight: bold;
+	display: inline;
 
 }
 

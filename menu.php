@@ -35,7 +35,7 @@
 						{
 							?>
 							<li class="active"><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Index</a></li>
-							<li ><a href="Registrarse.php"><i class="fa fa-edit" aria-hidden="true"></i> Registrarse</a></li>
+							<li ><a href="registro.php"><i class="fa fa-edit" aria-hidden="true"></i> Registrarse</a></li>
 							<li ><a href="iniciar_sesion.php"><i class="fa fa-rocket" aria-hidden="true"></i> Iniciar Sesion</a></li>
 							<?php
 						}	

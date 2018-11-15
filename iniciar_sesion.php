@@ -6,37 +6,37 @@
 	{
 		$email = $_POST['email'];
 		$contrasena = sha1($_POST['contrasena']); 
-	}
-	//incluir archivos de la configuracion de la base de datos
-	//incluir conexion con base de datos
-	require_once('conexion.php');
-
-	$consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email' AND contrasena = '$contrasena'");
-	$usuario = mysqli_fetch_array($consulta);
-	if (mysqli_num_rows($consulta)) 
-	{
-		session_start();
-		$_SESSION['email'] = $usuario['email'];
-		$_SESSION['nombre'] = $usuario['nombre'];
-		$_SESSION['apellido'] = $usuario['apellido'];
-		$_SESSION['id'] = $usuario['id'];
-		$login = 1;
-		header("Location: listar_usuarios.php?login =".$login);
-		
-
-	}
-	else
-	{
-		?>
-			<div class="alert alert-danger">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<strong>Alerta</strong> El usuario y la contraseña no coinciden, por favor intentelo de nuevo
-			</div>
-
-		<?php
-
-	}
 	
+		//incluir archivos de la configuracion de la base de datos
+		//incluir conexion con base de datos
+		require_once('conexion.php');
+
+		$consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email' AND contrasena = '$contrasena'");
+		$usuario = mysqli_fetch_array($consulta);
+		if (mysqli_num_rows($consulta)) 
+		{
+			session_start();
+			$_SESSION['email'] = $usuario['email'];
+			$_SESSION['nombre'] = $usuario['nombre'];
+			$_SESSION['apellido'] = $usuario['apellido'];
+			$_SESSION['id'] = $usuario['id'];
+			$login = 1;
+			header("Location: listar_usuarios.php?login =".$login);
+			
+
+		}
+		else
+		{
+			?>
+				<div class="alert alert-danger">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Alerta</strong> El usuario y la contraseña no coinciden, por favor intentelo de nuevo
+				</div>
+
+			<?php
+
+		}
+	}
 
 ?>
 
