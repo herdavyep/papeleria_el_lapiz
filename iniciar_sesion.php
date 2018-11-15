@@ -4,14 +4,14 @@
 	//resibir variables del formulario
 	if (isset($_POST['email']) && isset($_POST['contrasena'])) 
 	{
-		$email = $_POST['email'];
-		$contrasena = sha1($_POST['contrasena']); 
+		//$email = $_POST['email'];
+		//$contrasena = sha1($_POST['contrasena']); 
 
-		$servidor_LDAP = "192.168.0.1";      //=> ip del servidor de Active Directory (LDAP)
-		$servidor_dominio = "mi.dominio.local"; //=> dominio completo
-		$ldap_dn = "dc=mi,dc=dominio,dc=local"; //=> DN
-		$usuario_LDAP = "mi_usuario";   //=> usuario del dominio
-		$contrasena_LDAP = "mi_contraseña";  //=> password del usuario
+		$servidor_LDAP = "192.168.10.1";      //=> ip del servidor de Active Directory (LDAP)
+		$servidor_dominio = "coffee.com"; //=> dominio completo
+		$ldap_dn = "dc=coffee,dc=com"; //=> DN
+		$usuario_LDAP = $_POST['email'];  //=> usuario del dominio
+		$contrasena_LDAP = sha1($_POST['contrasena']);  //=> password del usuario
 	
 		$conectando_LDAP = ldap_connect($servidor_LDAP);
 		ldap_set_option($conectando_LDAP, LDAP_OPT_PROTOCOL_VERSION, 3);
