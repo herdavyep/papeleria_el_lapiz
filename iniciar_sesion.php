@@ -6,10 +6,33 @@
 	{
 		$email = $_POST['email'];
 		$contrasena = sha1($_POST['contrasena']); 
+
+		$servidor_LDAP = "192.168.0.1";      //=> ip del servidor de Active Directory (LDAP)
+		$servidor_dominio = "mi.dominio.local"; //=> dominio completo
+		$ldap_dn = "dc=mi,dc=dominio,dc=local"; //=> DN
+		$usuario_LDAP = "mi_usuario";   //=> usuario del dominio
+		$contrasena_LDAP = "mi_contraseña";  //=> password del usuario
 	
+		$conectando_LDAP = ldap_connect($servidor_LDAP);
+		ldap_set_option($conectando_LDAP, LDAP_OPT_PROTOCOL_VERSION, 3);
+		ldap_set_option($conectando_LDAP, LDAP_OPT_REFERRALS, 0);
+
+		if ($conectando_LDAP) {
+			
+			$autenticado_LDAP = ldap_bind($conectando_LDAP,
+			$usuario_LDAP . "@" . $servidor_dominio, $contrasena_LDAP);
+			if ($autenticado_LDAP) {
+				echo "autenticacion correcta";
+			}else{
+				echo "autenticacion incorrecta";
+			}
+		}else{
+			echo "no se a podido autenticar con servidor ldap: ". $servidor_LDAP .", verifique user y passw ";
+		}
+
 		//incluir archivos de la configuracion de la base de datos
 		//incluir conexion con base de datos
-		require_once('conexion.php');
+		/*require_once('conexion.php');
 
 		$consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email' AND contrasena = '$contrasena'");
 		$usuario = mysqli_fetch_array($consulta);
@@ -35,7 +58,8 @@
 
 			<?php
 
-		}
+		}*/
+
 	}
 
 ?>
@@ -59,7 +83,7 @@
 		 ?>
 		<div class="form-group">
 			<label for="">Correo Electronico</label>
-			<input type="email" name="email" class="form-control" placeholder="Ingrese correo elctronico" required="">
+			<input type="text" name="email" class="form-control" placeholder="Ingrese correo elctronico" required="">
 		</div>	
 
 		<div class="form-group">
